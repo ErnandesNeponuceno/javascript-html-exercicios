@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ada - Exercicio 11</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <h2>Calcular a média do aluno 2.0</h2>
+    <button onclick="media()" >Clique aqui para calcular!</button>
+    <section id="situacao">
+        <hr>
+        <p>Vamos verificar o resultado do aluno...</p>
+    </section>
+
+    <script>
+        function media() {
+            let nome = prompt('Digite o nome do aluno? ')
+            let numero1 = parseFloat(prompt(`Digite a primeira nota do aluno ${nome}?`))
+            let numero2 = parseInt(prompt(`Digite a segunda nota do aluno ${nome}?`))
+            medias = (numero1 + numero2) / 2
+
+            let mensagem // cria uma variável e deixa ela vazia
+            if (medias >= 6) { // Se por acaso a média foi 6.0 ou mais...
+            mensagem = 'Meus parabéns!'
+            } else if (medias >= 5) { // senão...
+            mensagem = 'Estude um pouco mais!'
+            } else {
+                mensagem = 'Infelizmente você foi reprovado!'
+            }
+
+            let mediadasnotas = document.getElementById('situacao')
+            mediadasnotas.innerHTML = `<p>Calculando a média final do aluno: ${nome}<br>`
+            mediadasnotas.innerHTML += `<p>As notas obtidas foram ${numero1} e ${numero2}<br>`
+            mediadasnotas.innerHTML += `<p>A média final será:  <mark>${medias}</mark>!<br>`
+            mediadasnotas.innerHTML += `<p>O resultado do aluno ${nome} é: <strong style='color:blue;'>${mensagem}</strong></p>` 
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ada - Exercicio 18</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+
+<body onload="sortear()">
+    <h2>Tente adivinhar meu número </h2>
+    <button onclick="jogar()">Clique aqui!</button>
+    <section id="resultado">
+        <p>Já pensei em um valor entre 1 e 100...</p>
+    </section>
+
+    <script>
+        let resultado = document.getElementById('resultado')
+        let jogador = 0
+        let computador = 0
+
+        function sortear() {
+            let min = 1
+            let max = 100
+            let dif = max - min
+            let aleatorio = Math.random() // Essa função gera um valor Real aleatório entre 0 e 1
+            computador = min + Math.trunc(dif * aleatorio)
+        }
+
+        function jogar() {
+            jogador = Number(prompt('Digite o seu número?'))
+            if (jogador < computador) {
+                resultado.innerHTML += `<p>Você falou ${jogador}. Meu número é <strong>MAIOR</strong>!</p>`
+            } else if (jogador > computador) {
+                resultado.innerHTML += `<p>Você falou ${jogador}. Meu número é <strong>MENOR</strong>!</p>`
+            } else if (jogador == computador) {
+                resultado.innerHTML += `<p><strong>PARABÉNS!</strong> Você acertou! Eu tinha sorteado o valor ${computador}!</p>`
+            }
+        }
+    </script>
+</body>
+
+</html>

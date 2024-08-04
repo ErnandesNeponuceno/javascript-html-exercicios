@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ada - Exercicio 27</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+
+<body>
+    <h2>Super Tabuada</h2>
+    <p>Escreva um número na caixa a seguir e te mostrarei a tabuada de multiplicação.</p>
+    <section id="entrada">
+        <form action="#" method="get">
+            <label for="fnum">Número: </label>
+            <input type="number" name="num" id="fnum" placeholder="Número">
+            <input type="submit" value="Tabuada" formaction="javascript:tabuada()">
+        </form>
+    </section>
+    <section id="resultado">
+        <p>Preencha os dados acima e aperte o botão.</p>
+    </section>
+
+    <script>
+        function tabuada() {
+            let resultado = document.getElementById('resultado')
+            let numero = Number(document.getElementById('fnum').value)
+
+            resultado.innerHTML += `<h2>Tabuada de ${numero}</h2>`
+
+            let contador = 1
+            while (contador <= 10) {
+                resultado.innerHTML += `${numero} x ${contador} = <strong>${numero * contador}</strong><br>`
+                contador++
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ada - Exercicio 06</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <h2>Somando dois números</h2>
+    <button onclick="clicou()" >Clique aqui para calcular!</button>
+    <section id="resultado">
+        <p>A soma entre 0 e 0 é igual a 0!</p>
+    </section>
+
+    <script>
+        function clicou() {
+            let numero1 = parseInt(prompt('Digite o primeiro número?'))
+            let numero2 = parseInt(prompt('Digite o segundo número?'))
+            soma = numero1 + numero2
+
+            let somadosnumeros = document.getElementById('resultado')
+            somadosnumeros.innerHTML = `<p>Olá, a soma entre <strong>${numero1} e ${numero2}</strong>! É ${soma}!`
+        }
+    </script> 
+</body>
+</html>

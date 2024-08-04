@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ada - Exercicio 10</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <h2>Testando botões</h2>
+    <button id="red" onclick="acao1()">Ação 01</button>
+    <button id="blue" onclick="acao2()">Ação 02</button>
+    <button id="green" onclick="acao3()">Ação 03</button>
+    <button id="yellow" onclick="acao4()">Ação 04</button>
+    <section id="resultado">
+        <hr><p>Aqui vou registrar suas ações com os botões acima.</p><hr>
+    </section>
+
+    <script>
+        let resultado = document.getElementById('resultado')
+        function acao1() {
+        resultado.innerHTML += `<p>Você clicou no primeiro botão</p>`
+        }
+        function acao2() {
+        resultado.innerHTML += `<p>Você clicou no segundo botão</p>`
+        }
+        function acao3() {
+        resultado.innerHTML += `<p>Você clicou no terceiro botão</p>`
+        }
+        function acao4() {
+        resultado.innerHTML += `<p>Você clicou no quarto botão</p>`
+        }
+    </script>
+</body>
+</html>

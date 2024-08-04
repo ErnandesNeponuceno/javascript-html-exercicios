@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ada - Exercicio 14</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <h2>Interagindo com o sistema</h2>
+    <button onclick="infor()" >Clique aqui</button>
+    <section id="saida">
+        <p>Aqui adicionamos a informação...</p>
+    </section>
+    <script>
+        function infor() {
+          let agora = new Date
+          let saida = document.getElementById('saida')
+          saida.innerHTML = `<p>O que eu recebi do sistema foi <mark>${agora}</mark></p>`
+        }
+    </script>
+</body>
+</html>

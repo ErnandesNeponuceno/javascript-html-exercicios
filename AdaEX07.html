@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ada - Exercicio 07</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <h2>Calcular a média do aluno</h2>
+    <button onclick="clicou()" >Clique aqui para calcular!</button>
+    <section id="resultado">
+        <p>
+            A média final do aluno.<br>
+            As notas obtidas foram 0 e 0.<br>
+            A média final será 0.
+        </p>
+    </section>
+
+    <script>
+        function clicou() {
+            let nome = prompt('Digite o nome do aluno? ')
+            let numero1 = parseInt(prompt('Digite a primeira nota?'))
+            let numero2 = parseInt(prompt('Digite a segunda nota?'))
+            media = (numero1 + numero2)/2
+
+            let mediadosnumeros = document.getElementById('resultado')
+            mediadosnumeros.innerHTML = `<p>A média final do aluno ${nome}<br> As notas obtidas foram ${numero1} e ${numero2}<br> A média final será:  <mark>${media}</mark>!`
+        }
+    </script>
+</body>
+</html>

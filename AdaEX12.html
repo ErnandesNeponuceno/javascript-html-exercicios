@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ada - Exercicio 12</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <h2>É par ou impar?</h2>
+    <button onclick="clicou()" >Clique para iniciar</button>
+    <section id="resultado">
+        <p>O resultado é...</p>
+    </section>
+    <script>
+        function clicou() {
+            let numero = parseInt(prompt('Digite o seu número?'))
+
+            let msg // cria uma variável e deixa ela vazia
+            if (numero % 2 == 0) { 
+            msg = 'par!'
+            } else {
+                msg = 'impar!'
+            }
+
+            const parouimpar = document.getElementById('resultado')
+            parouimpar.innerHTML = `<p> O número digitado ${numero} é <strong>${msg}</strong>`
+        }
+    </script>
+</body>
+</html>

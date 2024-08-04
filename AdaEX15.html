@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ada - Exercicio 15</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+
+<body>
+    <h2>Analisando data e hora do Sistema</h2>
+    <button onclick="infor()">Clique aqui</button>
+    <section id="saida">
+        <p>Aqui adicionamos a informação...</p>
+    </section>
+    <script>
+
+        function infor() {
+            let meses = new Array('Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio',
+                'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro');
+            let semana = new Array('Domingo', 'Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta', 'Sábado');
+            let agora = new Date;
+            let saida = document.getElementById('saida');
+            let dia = agora.getDate();
+            let mes = agora.getMonth(); // Jan = 0 | Fev = 1 | Mar = 2 e assim vai...
+            let ano = agora.getFullYear();
+            let sem = agora.getDay();  // Dom = 0 | Seg = 1 | Ter = 2 e assim vai...
+            let hora = agora.getHours();
+            let min = agora.getMinutes();
+
+            saida.innerHTML = `<p>São ${hora} e ${min} mins do dia ${dia} de ${meses[mes]} do ano de ${ano}</mark></p>`;
+            saida.innerHTML += `<p>Dia da semana: <mark>${semana[sem]}</mark></p>`;
+        }
+    </script>
+</body>
+
+</html>

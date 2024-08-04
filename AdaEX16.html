@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ada - Exercicio 16</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+
+<body>
+    <h2>Calculando a sua idade</h2>
+    <button onclick="calcularIdade()">Iniciar</button>
+    <section id="saida">
+        <p>Aqui adicionamos a informação...</p>
+    </section>
+
+    <script>
+        function calcularIdade() {
+            let dia = prompt('Digite o dia do seu nascimento (DD):');
+            let mes = prompt('Digite o mês do seu nascimento (MM):');
+            let ano = prompt('Digite o ano do seu nascimento (AAAA):');
+
+            let hoje = new Date();
+            let anoAtual = hoje.getFullYear();
+            let mesAtual = hoje.getMonth() + 1; // Os meses começam de 0 (janeiro) a 11 (dezembro)
+            let diaAtual = hoje.getDate();
+
+            let idade;
+            let saida = document.getElementById('saida');
+
+            if (mesAtual > mes || (mesAtual === mes && diaAtual >= dia)) {
+                idade = anoAtual - ano;
+                saida.innerHTML = `<p>Quem nasceu em ${dia}/${mes}/${ano} fez <strong>${idade}</strong> anos em ${dia}/${mes}/${anoAtual}.</p>`;
+            } else if (mes == mesAtual && dia == diaAtual) {       
+                saida.innerHTML = `<p>Parabéns! Hoje é o seu aniversário e você está completando <strong>${idade}</strong> anos.</p>`; 
+            } else {
+                idade = anoAtual - ano;
+                saida.innerHTML = `<p>Quem nasceu em ${dia}/${mes}/${ano} faz <strong>${idade}</strong> anos em ${dia}/${mes}/${anoAtual}.</p>`;
+            }
+        }
+    </script>
+</body>
+</html>

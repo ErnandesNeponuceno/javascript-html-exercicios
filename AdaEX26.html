@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ada - Exercicio 26</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <h2>Contagem "inteligente"</h2>
+    <p>Use qualquer valor nas caixas, simule contagens crescentes e regressivas. Use também valores negativos.</p>
+
+    <section id="entrada">
+        <form action="#" method="get">
+                <label for="fnumero1">Valor inicial: </label>
+                <input type="number" name="numero1" id="fnumero1" placeholder="Início da contagem">
+                <label for="fnumero2">Valor final: </label>
+                <input type="number" name="numero2" id="fnumero2" placeholder="Fim da contagem">
+                <input type="submit" value="Contar" formaction="javascript:contagem()">
+        </form>
+    </section>
+    
+    <div id="resultado"></div>
+
+    <script>
+        function contagem() {
+            let resultado = document.getElementById('resultado');
+            let numero1 = Number(document.getElementById('fnumero1').value);
+            let numero2 = Number(document.getElementById('fnumero2').value);
+            let cont;
+
+            resultado.innerHTML += `<h2>Contando de ${numero1} até ${numero2}</h2>`;
+
+            if (numero1 < numero2) {
+                cont = numero1;
+                while (cont <= numero2) {
+                    resultado.innerHTML += ` ${cont} &#x1F449;`;
+                    cont++;
+                }
+            } else if (numero2 < numero1) {
+                cont = numero1;
+                while (cont >= numero2) {
+                    resultado.innerHTML += ` ${cont} &#x1F449;`;
+                    cont--;
+                }
+            } else {
+                resultado.innerHTML += `Não é possível contar, pois os números são iguais`;
+            }
+
+            resultado.innerHTML += ` &#x1F3C1;`;
+        }
+    </script>
+</body>
+</html>

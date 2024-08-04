@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ada - Exercicio 04</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <h2>Interagindo com partes do HTML (DOM)</h2>
+    <button onclick="clicou()" >Clique aqui para começar!</button>
+    <section id="resultado">
+        <p>Aqui vai aparecer o resultado... </p>
+    </section>
+    <script>
+        function clicou() {
+            let nome = prompt('Qual é o seu nome? ')
+            let sobrenome = prompt('E Qual é o seu sobrenome? ')
+            let nomecompleto = document.getElementById('resultado')
+            nomecompleto.innerHTML = `<p>Olá, <strong>${nome} ${sobrenome}</strong>! É um grande prazer te conhecer!`
+        }
+    </script>
+    
+</body>  
+</html>

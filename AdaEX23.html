@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ada - Exercicio 23</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+
+<body>
+    <h2>Contando de 1 a 40 (marcando os pares)</h2>
+    <button onclick="contador()">Contar de 01 a 40</button>
+
+    <section id="resultado">
+        <p>Aperte o botão acima para contar</p>
+    </section>
+    <script>
+        function contador() {
+            let resultado = document.getElementById('resultado')
+
+            resultado.innerHTML += `<h2>Contando de 1 até 10, marcando os pares</h2>`
+
+            let cont = 1
+            while (cont <= 40) {
+                if (cont % 2 == 0) {
+                    resultado.innerHTML += `<mark><strong> ${cont} </strong></mark>&#x1F449;`
+                }
+                cont++
+            }
+            resultado.innerHTML += ` &#x1F3C1;`
+        }
+
+    </script>
+</body>
+
+</html>

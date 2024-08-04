@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ada - Exercicio 20</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+
+<body>
+    <h2>Descubra a estação do ano</h2>
+    <button onclick="estacao()">Informe o mês aqui</button>
+    <section id="resultado">
+        <p>Clique no botão acima para informar o mês.</p>
+    </section>
+    <script>
+        function estacao() {
+            let mesdoano = Number(prompt(
+                `Escolha o mês do ano:
+            \n[1] Janeiro \n[2] Fevereiro \n[3] Março \n[4] Abril \n[5] Maio \n[6] Junho \n[7] Julho \n[8] Agosto \n[9] Setembro \n[10] Outubro \n[11] Novembro \n[12] Dezembro`
+            ))
+            let resultado = document.getElementById('resultado');
+            let estacao = '';
+
+            switch (mesdoano) {
+                case 1: case 2: case 3:
+                    estacao = 'INVERNO';
+                    break;
+                case 4: case 5: case 6:
+                    estacao = 'PRIMAVERA';
+                    break;
+                case 7: case 8: case 9:
+                    estacao = 'VERÃO';
+                    break;
+                case 10: case 11: case 12:
+                    estacao = 'OUTONO';
+                    break;
+                default:
+                    estacao = 'INDEFINIDA';
+                    break;
+            }
+
+            resultado.innerHTML = `<p>No mês de <mark>${mesdoano}</mark>, 
+        estamos na estação <mark><strong>${estacao}</strong></mark>.</p>`
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ada - Exercicio 08</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <h2>Vários cálculos em JS</h2>
+    <button onclick="clicou()" >Clique aqui para calcular</button>
+    <section id="resultado">
+        <p>O número a ser analisado aqui será o 0</p>
+    </section>
+
+    <script>
+        function clicou() {
+            let numero1 = parseInt(prompt('Digite o número desejado?'))
+            let resultado = document.getElementById('resultado')
+            resultado.innerHTML = 
+            `<p>   
+            O número a ser analisado aqui será o <strong>${numero1}</strong><hr>
+                
+            O seu valor absoluto é ${Math.abs(numero1)}<br><br>
+
+            A sua parte inteira é ${Math.trunc(numero1)}<br><br>      
+
+            O valor inteiro mais próximo é ${Math.round(numero1)}<br><br>
+        
+            A sua raiz quadrada é ${Math.sqrt(numero1)}<br><br>
+          
+            A sua raiz cúbica é ${Math.cbrt(numero1)}<br><br>
+           
+            O valor de ${numero1}<sup>2</sup> é ${Math.pow(numero1, 2)}<br><br>
+          
+            O valor de ${numero1}<sup>3</sup> é ${Math.pow(numero1, 3)}!
+            </p> `
+        }
+    </script>
+</body> 
+</html>

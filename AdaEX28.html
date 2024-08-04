@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ada - Exercicio 28</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <h2>Cálculo de Fatorial</h2>
+    <p>Escreva um número (entre 1 e 21) na caixa a seguir e te mostrarei o Fatorial dele.</p>
+
+    <section id="entrada">
+        <form action="#" method="get">
+            <label for="fnum">Número: </label>
+            <input type="number" name="num" id="fnum" max="21" min="1" placeholder="Número">
+            <input type="submit" value="Fatorial" formaction="javascript:fatorial()">
+        </form>
+    </section>
+
+    <section id="resultado">
+        <p>Preencha os dados acima e aperte o botão.</p>
+    </section>
+    <script>
+        function fatorial() {
+            let resultado = document.getElementById('resultado')
+            let numero = Number(document.getElementById('fnum').value)
+
+            resultado.innerHTML += `<h2>Calculando ${numero}! </h2>`
+
+            let contador = numero
+            let fatorial = 1
+            while (contador > 1) {
+                resultado.innerHTML += `${contador} x `
+                fatorial *= contador // Correspondente ao cálculo fat = fat * c
+                contador--
+            }
+            resultado.innerHTML += `1 = <strong>${fatorial.toLocaleString('pt-BR')}</strong>`
+        }
+    </script>
+</body>
+</html>

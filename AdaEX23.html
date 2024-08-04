@@ -16,20 +16,20 @@
     </section>
     <script>
         function contador() {
-            let resultado = document.getElementById('resultado')
-
-            resultado.innerHTML += `<h2>Contando de 1 até 10, marcando os pares</h2>`
-
-            let cont = 1
-            while (cont <= 40) {
+            let resultado = document.getElementById('resultado');
+            resultado.innerHTML = ''; // Limpa o conteúdo anterior
+        
+            resultado.innerHTML += `<h2>Contando de 1 até 40, marcando os pares</h2>`;
+        
+            for (let cont = 1; cont <= 40; cont++) {
                 if (cont % 2 == 0) {
-                    resultado.innerHTML += `<mark><strong> ${cont} </strong></mark>&#x1F449;`
+                    resultado.innerHTML += `<mark><strong> ${cont} </strong></mark>&#x1F449;`;
+                }else {
+                    resultado.innerHTML += ` ${cont} &#x1F449;`
                 }
-                cont++
             }
-            resultado.innerHTML += ` &#x1F3C1;`
+            resultado.innerHTML += ` &#x1F3C1;`;
         }
-
     </script>
 </body>
 
